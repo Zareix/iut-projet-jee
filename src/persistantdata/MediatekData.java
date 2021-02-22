@@ -11,7 +11,7 @@ import mediatek2021.*;
 import user.UtilisateurMediatek;
 
 // classe mono-instance : l'unique instance est connue de la bibliotheque
-// via une injection de d�pendance dans son bloc static
+// via une injection de dependance dans son bloc static
 
 public class MediatekData implements PersistentMediatek {
 	private static String url = "jdbc:mysql://localhost:8889/jee";
@@ -20,9 +20,9 @@ public class MediatekData implements PersistentMediatek {
 
 	private Connection connect;
 
-// Jean-Fran�ois Brette 01/01/2018
+// Jean-Franeois Brette 01/01/2018
 	static {
-		// injection dynamique de la d�pendance dans le package stable mediatek2021
+		// injection dynamique de la dependance dans le package stable mediatek2021
 		Mediatek.getInstance().setData(new MediatekData());
 	}
 
@@ -31,18 +31,18 @@ public class MediatekData implements PersistentMediatek {
 			Class.forName("com.mysql.jdbc.Driver");
 			connect = DriverManager.getConnection(url,user,mdp);
 		} catch (SQLException | ClassNotFoundException e) {
-			System.err.println("Impossible de se connecter � la BD : " + e.getMessage());
+			System.err.println("Impossible de se connecter a la BD : " + e.getMessage());
 		}
 	}
 
-	// renvoie la liste de tous les documents de la biblioth�que
+	// renvoie la liste de tous les documents de la bibliotheque
 	@Override
 	public List<Document> catalogue(int type) {
 		return null;
 	}
 
-	// va r�cup�rer le User dans la BD et le renvoie
-	// si pas trouv�, renvoie null
+	// va recuperer le User dans la BD et le renvoie
+	// si pas trouve, renvoie null
 	@Override
 	public Utilisateur getUser(String login, String password) {
 		try {
@@ -59,15 +59,15 @@ public class MediatekData implements PersistentMediatek {
 		return null;
 	}
 
-	// va r�cup�rer le document de num�ro numDocument dans la BD
+	// va recuperer le document de numero numDocument dans la BD
 	// et le renvoie
-	// si pas trouv�, renvoie null
+	// si pas trouve, renvoie null
 	@Override
 	public Document getDocument(int numDocument) {
 		return null;
 	}
 
-	// ajoute un nouveau document - exception � d�finir
+	// ajoute un nouveau document - exception a definir
 	@Override
 	public void newDocument(int type, Object... args) throws NewDocException {
 		// args[0] -> le titre
@@ -75,7 +75,7 @@ public class MediatekData implements PersistentMediatek {
 		// etc en fonction du type et des infos optionnelles
 	}
 
-	// supprime un document - exception � d�finir
+	// supprime un document - exception a definir
 	@Override
 	public void suppressDoc(int numDoc) throws SuppressException {
 
