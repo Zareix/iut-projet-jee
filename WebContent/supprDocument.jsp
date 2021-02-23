@@ -13,5 +13,6 @@
 		if(user == null)
 			response.sendRedirect("/Projet_jEE/");
 	%>
+	<h1>Service de suppression de documents</h1>
 </body>
 </html>
