@@ -14,7 +14,7 @@ public class InjectionServlet extends HttpServlet {
 	
 	@Override
 	public void init() throws ServletException {
-		System.out.println("%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("%%%% INIT %%%%");
 		try {
 			Class.forName("persistantdata.MediatekData");
 		} catch (ClassNotFoundException e) {
