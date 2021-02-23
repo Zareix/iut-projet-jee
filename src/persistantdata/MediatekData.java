@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import mediatek2021.*;
@@ -38,7 +39,42 @@ public class MediatekData implements PersistentMediatek {
 	// renvoie la liste de tous les documents de la bibliotheque
 	@Override
 	public List<Document> catalogue(int type) {
-		return null;
+		List<Document> documents = new ArrayList<>();
+		String getDocQuery = "SELECT * FROM document D, $table T WHERE D.id_document = T.id_document";
+
+		// TODO : CPO-AV friendly
+		try {
+			switch (type) {
+			case 1: {
+				getDocQuery = getDocQuery.replace("$table", "livre");
+				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
+				while (res.next())
+					documents.add(new Livre(res.getInt("id"), res.getString("titre"), res.getString("auteur")));
+				break;
+			}
+			case 2: {
+				getDocQuery = getDocQuery.replace("$table", "cd");
+				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
+				while (res.next())
+					documents.add(new CD(res.getInt("id"), res.getString("titre"), res.getString("artiste")));
+				break;
+			}
+			case 3: {
+				getDocQuery = getDocQuery.replace("$table", "dvd");
+				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
+				while (res.next())
+					documents.add(new DVD(res.getInt("id"), res.getString("titre"), res.getString("realisateur")));
+				break;
+			}
+			default:
+				return null;
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+			return null;
+		}
+
+		return documents;
 	}
 
 	// va recuperer le User dans la BD et le renvoie
