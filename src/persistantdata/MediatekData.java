@@ -82,12 +82,12 @@ public class MediatekData implements PersistentMediatek {
 	@Override
 	public Utilisateur getUser(String login, String password) {
 		try {
-			PreparedStatement sql = connect.prepareStatement("SELECT * FROM utilisateur WHERE login = ? AND mdp = ?");
+			PreparedStatement sql = connect.prepareStatement("SELECT * FROM utilisateur WHERE login = ? AND password = ?");
 			sql.setString(1, login);
 			sql.setString(2, password);
 			ResultSet res = sql.executeQuery();
 			if (res.next()) {
-				return new UtilisateurMediatek(res.getString("login"), res.getString("mdp"));
+				return new UtilisateurMediatek(res.getString("login"), res.getString("password"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

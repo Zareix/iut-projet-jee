@@ -26,5 +26,9 @@ public class UtilisateurMediatek implements Utilisateur {
 	public String password() {
 		return mdp;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.login();
+	}
 }
