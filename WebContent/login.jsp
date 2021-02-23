@@ -42,10 +42,8 @@
 	%>
 	<h2>
 		Connecté en tant que
-		<%=user.login()%></h2>
-	<a href="/Projet_jEE/menu.jsp">Vers le menu</a>
-	<%
-	}
-	%>
+		<%=user%></h2>
+	<a href="/Projet_jEE/index.jsp">Vers le menu</a>
+	<% } %>
 </body>
 </html>

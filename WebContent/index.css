@@ -3,3 +3,13 @@
 body {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
+
+.main {
+	margin: auto;
+	width : 80%;
+	text-align: center;
+}
+
+.menu {
+	width : 60%;
+}
