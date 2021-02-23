@@ -15,7 +15,7 @@ public class CD implements Document {
 
 	@Override
 	public Object[] data() {
-		return new String[] { this.titre, this.artiste };
+		return new Object[] { this.id, this.titre, this.artiste };
 	}
 
 	@Override

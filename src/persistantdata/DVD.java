@@ -15,7 +15,7 @@ public class DVD implements Document {
 
 	@Override
 	public Object[] data() {
-		return new String[] { this.titre, this.realisateur };
+		return new Object[] { this.id, this.titre, this.realisateur };
 	}
 
 	@Override

@@ -15,7 +15,7 @@ public class Livre implements Document {
 
 	@Override
 	public Object[] data() {
-		return new String[] { this.titre, this.auteur };
+		return new Object[] { this.id, this.titre, this.auteur };
 	}
 
 	@Override
