@@ -24,3 +24,7 @@ local.properties
 
 # Testing environment specific
 derby.log
+
+
+/build
+/bin/*
