@@ -1,4 +1,4 @@
-<%@page import="mediatek2021.Mediatek, mediatek2021.Document"%>
+<%@page import="mediatek2021.Mediatek, mediatek2021.Document, mediatek2021.Utilisateur"%>
 <%@page import="java.util.ArrayList, java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -11,12 +11,16 @@
 </head>
 <body>
 	<%
+	Utilisateur user = (Utilisateur) session.getAttribute("user");
+	if (user == null)
+		response.sendRedirect("/Projet_jEE/");
+	
 	String[] types = { "Livre", "CD", "DVD" };
 	List<Document> documents;
 	%>
 
 	<a href="/Projet_jEE/index.jsp"><button>Retour au menu</button></a>
-	<h1>Catalogue de tout les documents</h1>
+	<h1>Catalogue de tous les documents</h1>
 	<%
 	for (int i = 1; i <= 3; i++) {
 	%>
