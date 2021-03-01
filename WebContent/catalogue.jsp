@@ -15,6 +15,7 @@
 	List<Document> documents;
 	%>
 
+	<a href="/Projet_jEE/index.jsp"><button>Retour au menu</button></a>
 	<h1>Catalogue de tout les documents</h1>
 	<%
 	for (int i = 1; i <= 3; i++) {

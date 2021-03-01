@@ -31,6 +31,7 @@
 		<input
 			type="password" name="password"
 			placeholder="Entrer votre mot de passe">
+		<br><br>
 		<button type="submit">Se connecter</button>
 	</form>
 	<%=msgError%>

@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="./index.css"></link>
 </head>
 <body>
 	<%
@@ -13,6 +14,7 @@
 		if(user == null)
 			response.sendRedirect("/Projet_jEE/");
 	%>
+	<a href="/Projet_jEE/index.jsp"><button>Retour au menu</button></a>
 	<h1>Service d'ajout de documents</h1>
 </body>
 </html>
