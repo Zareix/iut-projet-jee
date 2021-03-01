@@ -49,21 +49,21 @@ public class MediatekData implements PersistentMediatek {
 				getDocQuery = getDocQuery.replace("$table", "livre");
 				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
 				while (res.next())
-					documents.add(new Livre(res.getInt("id"), res.getString("titre"), res.getString("auteur")));
+					documents.add(new Livre(res.getInt("id"), res.getString("titre"), res.getString("auteur"), res.getBoolean("emprunte")));
 				break;
 			}
 			case 2: {
 				getDocQuery = getDocQuery.replace("$table", "cd");
 				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
 				while (res.next())
-					documents.add(new CD(res.getInt("id"), res.getString("titre"), res.getString("artiste")));
+					documents.add(new CD(res.getInt("id"), res.getString("titre"), res.getString("artiste"), res.getBoolean("emprunte")));
 				break;
 			}
 			case 3: {
 				getDocQuery = getDocQuery.replace("$table", "dvd");
 				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
 				while (res.next())
-					documents.add(new DVD(res.getInt("id"), res.getString("titre"), res.getString("realisateur")));
+					documents.add(new DVD(res.getInt("id"), res.getString("titre"), res.getString("realisateur"), res.getBoolean("emprunte")));
 				break;
 			}
 			default:
@@ -106,15 +106,15 @@ public class MediatekData implements PersistentMediatek {
 		try {
 			ResultSet res1 = connect.createStatement().executeQuery(getDocQuery.replace("$table", "livre"));
 			if (res1.next())
-				return new Livre(res1.getInt("id"), res1.getString("titre"), res1.getString("auteur"));
+				return new Livre(res1.getInt("id"), res1.getString("titre"), res1.getString("auteur"), res1.getBoolean("emprunte"));
 
 			ResultSet res2 = connect.createStatement().executeQuery(getDocQuery.replace("$table", "cd"));
 			if (res2.next())
-				return new CD(res2.getInt("id"), res2.getString("titre"), res2.getString("artiste"));
+				return new CD(res2.getInt("id"), res2.getString("titre"), res2.getString("artiste"), res2.getBoolean("emprunte"));
 
 			ResultSet res3 = connect.createStatement().executeQuery(getDocQuery.replace("$table", "dvd"));
 			if (res3.next())
-				return new DVD(res3.getInt("id"), res3.getString("titre"), res3.getString("realisateur"));
+				return new DVD(res3.getInt("id"), res3.getString("titre"), res3.getString("realisateur"), res3.getBoolean("emprunte"));
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}

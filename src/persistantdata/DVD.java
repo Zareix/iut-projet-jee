@@ -6,11 +6,20 @@ public class DVD implements Document {
 	private int id;
 	private String titre;
 	private String realisateur;
+	private boolean emprunte;
 
 	public DVD(int id, String titre, String realisateur) {
 		this.id = id;
 		this.titre = titre;
 		this.realisateur = realisateur;
+		this.emprunte = false;
+	}
+	
+	public DVD(int id, String titre, String realisateur, boolean emprunte) {
+		this.id = id;
+		this.titre = titre;
+		this.realisateur = realisateur;
+		this.emprunte = emprunte;
 	}
 
 	@Override
@@ -20,7 +29,7 @@ public class DVD implements Document {
 
 	@Override
 	public String toString() {
-		return id + " : " + titre + " par " + realisateur;
+		return id + " : " + titre + " par " + realisateur + (emprunte ? " - Emprunté" : "");
 	}
 
 }
