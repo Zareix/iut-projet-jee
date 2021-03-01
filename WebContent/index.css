@@ -27,6 +27,6 @@ li:not(:last-child) {
 .catalogue{
 	width : 60%;
 	margin: auto;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 }
 
