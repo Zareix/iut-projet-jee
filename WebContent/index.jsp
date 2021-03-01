@@ -25,6 +25,7 @@
 		<div class="menu">
 			<h3>Quel service souhaitez vous utiliser ?</h3>
 			<ul>
+				<li><a href="/Projet_jEE/catalogue.jsp">Voir tout les documents</a></li>
 				<li><a href="/Projet_jEE/addDocument.jsp">Ajouter un
 						document</a></li>
 				<li><a href="/Projet_jEE/supprDocument.jsp">Suppriment un

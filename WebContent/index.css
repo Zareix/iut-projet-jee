@@ -4,6 +4,14 @@ body {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+h1 {
+	text-align: center;
+}
+
+li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
 .main {
 	margin: auto;
 	width : 80%;
@@ -15,3 +23,10 @@ body {
 	margin: auto;
 	text-align: justify;
 }
+
+.catalogue{
+	width : 60%;
+	margin: auto;
+	margin-bottom: 2rem;
+}
+
