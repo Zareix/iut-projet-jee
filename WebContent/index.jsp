@@ -25,11 +25,11 @@
 		<div class="menu">
 			<h3>Quel service souhaitez vous utiliser ?</h3>
 			<p>
-				<a href="/Projet_jEE/catalogue.jsp">Voir tout les documents</a>
+				<a href="/Projet_jEE/catalogue.jsp">Voir tous les documents</a>
 			</p>
 			<p><a href="/Projet_jEE/addDocument.jsp">Ajouter un document</a></p>
 			<p>
-				<a href="/Projet_jEE/supprDocument.jsp">Suppriment un document</a>
+				<a href="/Projet_jEE/supprDocument.jsp">Supprimer un document</a>
 			</p>
 		</div>
 		<%
