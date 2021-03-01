@@ -129,6 +129,7 @@ public class MediatekData implements PersistentMediatek {
 		// etc en fonction du type et des infos optionnelles
 
 		// TODO : CPO-AV friendly
+		// TODO : check if doc existe déjà
 		try (PreparedStatement docStat = connect.prepareStatement("INSERT INTO document (titre) VALUES (?)",
 				Statement.RETURN_GENERATED_KEYS)) {
 			if (args[0] == null)
@@ -181,6 +182,7 @@ public class MediatekData implements PersistentMediatek {
 	// supprime un document - exception a definir
 	@Override
 	public void suppressDoc(int numDoc) throws SuppressException {
+		//TODO : gerer if emprunte
 		try {
 			PreparedStatement sql = connect.prepareStatement("DELETE FROM document WHERE id_document = ?");
 			sql.setInt(1, numDoc);
