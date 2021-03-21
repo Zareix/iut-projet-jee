@@ -20,7 +20,7 @@ INSERT INTO `document` (`Id_Document`, `Titre`, `Emprunte`) VALUES
 (31, 'Le Loup de Wall Street', 1),
 (32, 'After hours', 0),
 (33, 'Les Fleurs du mal', 0),
-(34, 'L\'Étranger', 0),
+(34, 'L Étranger', 0),
 (37, 'e', 0),
 (38, 'e', 0),
 (39, 'e', 0),
