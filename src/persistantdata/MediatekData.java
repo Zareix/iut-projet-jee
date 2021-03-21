@@ -46,36 +46,27 @@ public class MediatekData implements PersistentMediatek {
 	@Override
 	public List<Document> catalogue(int type) {
 		List<Document> documents = new ArrayList<>();
-		String getDocQuery = "SELECT * FROM document D, $table T WHERE D.id_document = T.id_document";
+		String getDocQuery = "SELECT id FROM $table";
 		try {
 			switch (type) {
 			case 1: {
 				getDocQuery = getDocQuery.replace("$table", "livre");
-				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
-				while (res.next())
-					documents.add(new Livre(res.getInt("id"), res.getString("titre"), res.getString("auteur"),
-							res.getBoolean("emprunte")));
 				break;
 			}
 			case 2: {
 				getDocQuery = getDocQuery.replace("$table", "cd");
-				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
-				while (res.next())
-					documents.add(new CD(res.getInt("id"), res.getString("titre"), res.getString("artiste"),
-							res.getBoolean("emprunte")));
 				break;
 			}
 			case 3: {
 				getDocQuery = getDocQuery.replace("$table", "dvd");
-				ResultSet res = connect.createStatement().executeQuery(getDocQuery);
-				while (res.next())
-					documents.add(new DVD(res.getInt("id"), res.getString("titre"), res.getString("realisateur"),
-							res.getBoolean("emprunte")));
 				break;
 			}
 			default:
 				return null;
 			}
+			ResultSet res = connect.createStatement().executeQuery(getDocQuery);
+			while (res.next())
+				documents.add(getDocument(res.getInt("id")));
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 			return null;
@@ -87,7 +78,7 @@ public class MediatekData implements PersistentMediatek {
 	/**
 	 * Retourne l'utilisateur à partir d'un login et d'un mot de passe
 	 * 
-	 * @param login : identifiant
+	 * @param login    : identifiant
 	 * @param password : mot de passe
 	 * 
 	 * @return l'utisateur si trouvé, null sinon
