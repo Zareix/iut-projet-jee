@@ -14,7 +14,7 @@ public class Livre implements Document {
 		this.auteur = auteur;
 		this.emprunte = false;
 	}
-	
+
 	public Livre(int id, String titre, String auteur, boolean emprunte) {
 		this.id = id;
 		this.titre = titre;

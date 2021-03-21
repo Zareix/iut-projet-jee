@@ -1,43 +1,62 @@
 @charset "ISO-8859-1";
 
 body {
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 h1 {
 	text-align: center;
 }
 
+h3 {
+	text-align: center;
+}
+
 li:not(:last-child) {
-    margin-bottom: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 form {
 	margin: auto;
-    width: 50%;
-    padding: 1rem;
-    border: solid;
-    border-color: gray;
-    text-align: center;
+	width: 60%;
+	padding: 1rem;
+	border: solid;
+	border-color: gray;
+	text-align: center;
+}
+
+input {
+	width: 40ch;
+	margin-bottom: 1rem;
+}
+
+.logged {
+	margin: auto;
 }
 
 .main {
 	margin: auto;
-	width : 80%;
+	width: 80%;
 	text-align: center;
 }
 
 .menu {
-	width : 60%;
+	width: 60%;
 	margin: auto;
 	text-align: center;
 	border: solid;
 	border-color: gray;
+	border-radius: 8px;
 }
 
-.catalogue{
-	width : 60%;
+.catalogue {
+	width: 60%;
 	margin: auto;
 	margin-bottom: 1.5rem;
+	border-radius: 8px;
 }
 
+.error {
+	color: red;
+	margin-bottom: 1rem;
+}

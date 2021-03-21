@@ -5,12 +5,12 @@ import mediatek2021.Utilisateur;
 public class UtilisateurMediatek implements Utilisateur {
 	private String login;
 	private String mdp;
-	
+
 	public UtilisateurMediatek(String l, String m) {
 		this.login = l;
 		this.mdp = m;
 	}
-	
+
 	@Override
 	public Object[] data() {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class UtilisateurMediatek implements Utilisateur {
 	public String password() {
 		return mdp;
 	}
-	
+
 	@Override
 	public String toString() {
 		return this.login();

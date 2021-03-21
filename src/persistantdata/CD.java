@@ -7,14 +7,14 @@ public class CD implements Document {
 	private String titre;
 	private String artiste;
 	private boolean emprunte;
-	
+
 	public CD(int id, String titre, String artiste) {
 		this.id = id;
 		this.titre = titre;
 		this.artiste = artiste;
 		this.emprunte = false;
 	}
-	
+
 	public CD(int id, String titre, String artiste, boolean emprunte) {
 		this.id = id;
 		this.titre = titre;

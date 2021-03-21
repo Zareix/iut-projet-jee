@@ -14,7 +14,7 @@ public class DVD implements Document {
 		this.realisateur = realisateur;
 		this.emprunte = false;
 	}
-	
+
 	public DVD(int id, String titre, String realisateur, boolean emprunte) {
 		this.id = id;
 		this.titre = titre;

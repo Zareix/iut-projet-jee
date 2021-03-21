@@ -20,14 +20,17 @@
 		} else {
 		%>
 		<p>
-			Connecté en tant que
-			<%=user%></p>
+			Connecté en tant que <b> <%=user%>
+			</b>
+		</p>
 		<div class="menu">
 			<h3>Quel service souhaitez vous utiliser ?</h3>
 			<p>
 				<a href="/Projet_jEE/catalogue.jsp">Voir tous les documents</a>
 			</p>
-			<p><a href="/Projet_jEE/addDocument.jsp">Ajouter un document</a></p>
+			<p>
+				<a href="/Projet_jEE/addDocument.jsp">Ajouter un document</a>
+			</p>
 			<p>
 				<a href="/Projet_jEE/supprDocument.jsp">Supprimer un document</a>
 			</p>
